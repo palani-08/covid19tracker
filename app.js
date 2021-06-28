@@ -18,7 +18,7 @@ var config = {
   url: 'https://covidtracking.com/api/states',
   headers: { }
 };
-import axios from 'axios'
+
 axios(config)
 .then((res) => res.json())
 .then(data => this.states = data.response)
