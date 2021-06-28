@@ -5,14 +5,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Indian Covid-19 Tracker</title>
+   
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 <div id="app">
 <div class="container">
-    <select name="" id="" v-model="state">
-    <option value="">Select State</option>
-    <option v-for="(list, index) in statelist" :key="index" :value="list">{{list}}</option>
+    <select name="" id="" v-model="country" @change="getdata">
+    <option value="">Select Country</option>
+    <option v-for="country in countryList" :key="index" :value="country">{{country}}</option>
     </select>
     <div class="panel">
         <div class="Cases">
@@ -35,6 +36,6 @@
 </div>
  </div>
    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
-    <script src="app.js"></script>
+    <script  type="module" src="app.js"></script>
 </body>
 </html>

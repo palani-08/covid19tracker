@@ -2,36 +2,63 @@
 const vue = new Vue({
     el: '#app' ,
     data: {
-        state: '',
-        statelist: '',
+        country: '',
+        countryList: [],
         cases: '',
         death: '',
         recovered: ''
 
     },
+    
     methods: {
-       getState() {
+      
+       getCountry() {
+         import axios from 'axios';
+         import Vueaxios from 'vueaxios';
         var axios = require('axios');
 
-var config = {
-  method: 'get',
-  url: 'https://covidtracking.com/api/states',
-  headers: { }
-};
-
+        var config = {
+          method: 'get',
+          url: 'https://corona.lmao.ninja/v2/countries?yesterday&sort',
+          headers: { }
+        };
 axios(config)
-.then((res) => res.json())
-.then(data => this.states = data.response)
-.catch(err => console.log(err.message))
+.then(response => response.json()).then(data =>{
+  console.log( this.countryList =  data.country);
+})
+.catch(function (error) {
+  console.log(error);
+});
+        
+      },
+
+      getdata(){
+        var axios = require('axios');
+
+        var config = {
+          method: 'get',
+          url: 'https://corona.lmao.ninja/v2/countries?yesterday&sort' + this.country,
+          headers: { }
+        };
+axios(config)
+.then(response => response.json()).then(data =>{
+  data =  data.response[0];
+  this.cases = data.cases
+  this.death = data.deaths
+  this.recovered = data.recovered
+});   
+
+      }
   },
   
  
 
             
        mounted() {
-           this.getState();
-       }
+          this.getCountry();
+        
+       },
     
-      }
+     
 
 });
