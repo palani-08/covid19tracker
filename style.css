@@ -7,7 +7,7 @@ body{
 
 .container{
 
-    width: 50px;
+    width: 150px;
     padding: 20px;
     height: 300px;
     margin: 150px auto;
@@ -18,19 +18,31 @@ body{
     box-shadow: 5px,5px,11px rgba(113,113, 113, 15%);
 }
 select{
-    border: none;
+    border: solid;
     box-shadow: 5px,5px,11px rgba(113,113, 113, 15%);
     width: 250%;
     height: 30px;
+    font-size: medium;
 
 
 }
 .panel{
+    
     text-align: center;
     width: 200%;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
     justify-content: space-evenly;
 
+
+}
+.Cases{
+    color: crimson;background-color: rgb(236, 191, 191);width: 250px;padding: 5%;margin-top: 2%;margin-right: 6%;
+}
+.Death{
+    color: black;background-color: lightgrey;width: 250px;padding: 5%;margin-top: 2%;margin-right: 6%;
+}
+.Recovered{
+    color: darkolivegreen;background-color: lightgreen;width: 250px;padding: 5%;margin-top: 2%;
 }
